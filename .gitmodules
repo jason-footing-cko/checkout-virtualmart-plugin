@@ -1,0 +1,4 @@
+[submodule "plugins/vmpayment/checkoutapipayment/CheckoutApi"]
+	path = plugins/vmpayment/checkoutapipayment/CheckoutApi
+	url = https://github.com/CKOTech/checkout-php-library.git
+	branch = CheckoutApi
