@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment">
+    <name>Checkout.com </name>
+    <creationDate>January 07 2015</creationDate>
+    <author>The Checkout Integration Development Team</author>
+    <authorUrl>http://www.checkout.com</authorUrl>
+    <copyright>Copyright (C)2015 Checkout.com Team. All rights reserved.</copyright>
+    <version>1.0.0</version>
+    <description>Checkout.com (credit card)</description>
+    <files>
+        <filename plugin="checkoutapipayment">checkoutapipayment.php</filename>
+        <folder>language</folder>
+    </files>
+    <vmconfig>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/plugins/vmpayment/checkoutapipayment/checkoutapipayment/fields">
+                <field type="spacer" default="VMPAYMENT_CHECKOUTAPIPAYMENT" level="level1"/>
+                <field type="vmtitle" default="VMPAYMENT_CHECKOUTAPIPAYMENT_PUBLISHABLE_SETTING" level="level1"/>
+                <field name="public_key" type="text" size="100" default=""
+                   label="VMPAYMENT_CHECKOUTAPIPAYMENT_PUBLISHABLE_KEY" description="VMPAYMENT_CHECKOUTAPIPAYMENT_PUBLISHABLE_KEY_DESC"/>
+                <field name="secret_key" type="text" size="100" default=""
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_SECRET_KEY" description="VMPAYMENT_CHECKOUTAPIPAYMENT_SECRET_KEY_DESC"/>
+
+                <field name="creditcards" type="authorizenetcreditcards" default="" multiple="multiple"
+                       label="VMPAYMENT_AUTHORIZENET_CREDITCARDS" description="VMPAYMENT_AUTHORIZENET_CREDITCARDS_DESC">
+                    <option value="Visa">VMPAYMENT_CHECKOUTAPIPAYMENT_VISA</option>
+                    <option value="Mastercard">VMPAYMENT_CHECKOUTAPIPAYMENT_MASTERCARD</option>
+                    <option value="AmericanExpress">VMPAYMENT_CHECKOUTAPIPAYMENT_AMERICANEXPRESS</option>
+                    <option value="Discover">VMPAYMENT_CHECKOUTAPIPAYMENT_DISCOVER</option>
+                    <option value="DinersClub">VMPAYMENT_CHECKOUTAPIPAYMENT_DINERSCLUB</option>
+                    <option value="JCB">VMPAYMENT_CHECKOUTAPIPAYMENT_JCB</option>
+                </field>
+
+                <field name="cvv_images" type="vmfiles" label="VMPAYMENT_CHECKOUTAPIPAYMENT_CVVIMAGES"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_CVVIMAGES_DESC"
+                       directory="/images/stories/virtuemart/payment"
+                       default="default" hide_default="1" hide_none="1"
+                       stripext="0" exclude="^_"/>
+
+
+                <field type="vmtitle" default="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDER_STATUS_PARAMS" level="level1"/>
+                <field name="order_type" type="list" default="AUTH_CAPTURE" label="VMPAYMENT_CHECKOUTAPIPAYMENT_TRANSACTION_TYPE"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_TRANSACTION_TYPE_DESC">
+                    <option value="AUTH_CAPTURE">VMPAYMENT_CHECKOUTAPIPAYMENT_TRANSACTION_TYPE_AUTH_CAPTURE</option>
+                    <option value="AUTH_ONLY">VMPAYMENT_CHECKOUTAPIPAYMENT_TRANSACTION_TYPE_AUTH_ONLY</option>
+                </field>
+                <field name="payment_approved_status" type="vmorderstate" scope="com_virtuemart" default="C"
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_APPROVED"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_SUCCESS_DESC"/>
+
+                <field name="payment_declined_status" type="vmorderstate" scope="com_virtuemart" default="X"
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_DECLINED"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_INVALID_DESC"/>
+                <field name="payment_held_status" type="vmorderstate" scope="com_virtuemart" default="P"
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_HELD"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_ORDERSTATUS_CANCEL_DESC"/>
+
+                <field type="vmtitle" default="VMPAYMENT_CHECKOUTAPIPAYMENT_API_SETUP" level="level1"/>
+                <field name="sandbox" type="list" default="live" label="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_SANDBOX"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_SANDBOX_DESC">
+                    <option value="test">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_TEST</option>
+                    <option value="preprod">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_PREPROD</option>
+                    <option value="live">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_LIVE</option>
+                </field>
+
+                <field name="mode_type" type="list" default="0" label="VMPAYMENT_CHECKOUTAPIPAYMENT_MODE_TYPE"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_MODE_TYPE_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+
+                <field name="localpayment" type="list" default="0" label="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_LOCALPAYMENT"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_LOCALPAYMENT_DESC">
+                    <option value="0">COM_VIRTUEMART_NO</option>
+                    <option value="1">COM_VIRTUEMART_YES</option>
+                </field>
+
+                <field name="autocaptime" type="text" scope="com_virtuemart" default="0"
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_AUTOCAPTIME"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_AUTOCAPTIME_DESC"/>
+
+                <field name="gateway_timeout" type="text" scope="com_virtuemart" default="60"
+                       label="VMPAYMENT_CHECKOUTAPIPAYMENT_GATEWAYTIMEOUT"
+                       description="VMPAYMENT_CHECKOUTAPIPAYMENT_GATEWAYTIMEOUT_DESC"/>
+
+
+
+            </fieldset>
+        </fields>
+
+    </vmconfig>
+</extension>
