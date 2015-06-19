@@ -58,8 +58,7 @@
                 <field type="vmtitle" default="VMPAYMENT_CHECKOUTAPIPAYMENT_API_SETUP" level="level1"/>
                 <field name="sandbox" type="list" default="live" label="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_SANDBOX"
                        description="VMPAYMENT_CHECKOUTAPIPAYMENT_USE_SANDBOX_DESC">
-                    <option value="test">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_TEST</option>
-                    <option value="preprod">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_PREPROD</option>
+                    <option value="sandbox">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_TEST</option>
                     <option value="live">VMPAYMENT_CHECKOUTAPIPAYMENT_SANDBOX_LIVE</option>
                 </field>
 
