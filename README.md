@@ -5,4 +5,4 @@ See the [installation guide](https://github.com/CKOTech/checkout-virtualmart-plu
 
 Webhook
 ========
-Url: http://example.com/virtuemart/index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&tmpl=component&pm={payment_id}
+Url: example.com/virtuemart/index.php?option=com_virtuemart&view=pluginresponse&task=pluginnotification&tmpl=component&pm={payment_id}
